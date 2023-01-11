@@ -1,5 +1,6 @@
 package com.example.mythreadexamples;
 
+import android.os.Handler;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -28,11 +29,14 @@ public class PlainThread extends Thread {
     int threadNumber;
     EditText counterEditText;
     EditText outputEditText;
+    Handler handler;
 
-    PlainThread(int threadNumber, EditText counterEditText, EditText outputEditText) {
+    PlainThread(int threadNumber, EditText counterEditText, EditText outputEditText,
+                Handler handler) {
         this.threadNumber = threadNumber;
         this.counterEditText = counterEditText;
         this.outputEditText = outputEditText;
+        this.handler = handler;
     }
 
     public Boolean enabled = true;
@@ -48,8 +52,11 @@ public class PlainThread extends Thread {
             Log.v("PlainThread" + threadNumber, "counter: " + counter);
             Log.v("PlainThread" + threadNumber, "output: " + output);
 
-            counterEditText.setText("" + counter);
-            outputEditText.setText(output);
+
+            handler.post(() -> {
+                counterEditText.setText("" + counter);
+                outputEditText.setText(output);
+            });
 
             try {
                 sleep(2000);

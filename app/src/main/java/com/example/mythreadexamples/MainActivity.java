@@ -1,6 +1,7 @@
 package com.example.mythreadexamples;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
@@ -19,16 +20,20 @@ public class MainActivity extends AppCompatActivity {
     PlainThread plainThread2;
 
     public void startPlainThread1(View v) {
+        if (plainThread1 != null && plainThread1.isAlive()) return;
         plainThread1 = new PlainThread(1,
                 findViewById(R.id.count1EditText),
-                findViewById(R.id.output1EditText));
+                findViewById(R.id.output1EditText),
+                new Handler());
         plainThread1.start();
     }
 
     public void startPlainThread2(View v) {
+        if (plainThread2 != null && plainThread2.isAlive()) return;
         plainThread2 = new PlainThread(2,
                 findViewById(R.id.count2EditText),
-                findViewById(R.id.output2EditText));
+                findViewById(R.id.output2EditText),
+                new Handler());
         plainThread2.start();
     }
 
