@@ -30,16 +30,24 @@ public class PlainThread extends Thread {
         this.threadNumber = threadNumber;
     }
 
+    public Boolean enabled = true;
+
     @Override
     public void run() {
         //super.run();
 
-        while (counter < 10) {
+        while (counter < 10 && enabled == true) {
             counter += 1;
             output += (char) (random.nextInt(26) + 65);
 
             Log.v("PlainThread" + threadNumber, "counter: " + counter);
             Log.v("PlainThread" + threadNumber, "output: " + output);
-        }
+
+            try {
+                sleep(2000);
+            } catch (InterruptedException e) {
+                Log.v("PlainThread" + this.threadNumber, "finished sleeping");
+            }//try
+        }//while
     }
 }
