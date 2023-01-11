@@ -1,22 +1,9 @@
 package com.example.mythreadexamples;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.mythreadexamples.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,4 +14,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    PlainThread plainThread1 = new PlainThread(1);
+    PlainThread plainThread2 = new PlainThread(2);
+
+    public void startPlainThread1(Button v) {
+        plainThread1.start();
+    }
+
+    public void plainThread2(Button v) {
+        plainThread2.start();
+    }
 }

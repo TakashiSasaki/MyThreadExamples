@@ -23,15 +23,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="開始" />
+                android:text="plainThread1" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="停止" />
+                android:onClick="startPlainThread1"
+                android:text="start" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="interruptPlainThread1"
+                android:text="interrupt" />
+
         </LinearLayout>
 
 
@@ -48,8 +56,7 @@
             <EditText
                 android:id="@+id/count1EditText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="スレッド１はまだ動いていません" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
@@ -65,8 +72,7 @@
             <EditText
                 android:id="@+id/output1EditText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="スレッド１はまだ動いていません" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
 
@@ -91,17 +97,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="plainThread2" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="開始" />
+                android:onClick="startPlainThread2"
+                android:text="start" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="停止" />
-
+                android:onClick="interruptPlainThread2"
+                android:text="interrupt" />
 
         </LinearLayout>
 
@@ -109,7 +120,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop=""
             android:orientation="horizontal">
 
             <TextView
@@ -120,8 +130,7 @@
             <EditText
                 android:id="@+id/counter2EditText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="スレッド2はまだ動いていません" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -138,8 +147,7 @@
             <EditText
                 android:id="@+id/output2EditText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="スレッド2はまだ動いていません" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </LinearLayout>
