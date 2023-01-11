@@ -40,6 +40,11 @@
                 android:onClick="interruptThread1"
                 android:text="interrupt" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="submitThread1"
+                android:text="submit" />
         </LinearLayout>
 
 
