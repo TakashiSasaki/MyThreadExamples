@@ -34,9 +34,9 @@ public class PlainThread extends Thread {
     public void run() {
         //super.run();
 
-        while (counter < 100) {
+        while (counter < 10) {
             counter += 1;
-            output += (char) random.nextInt(26) + 65;
+            output += (char) (random.nextInt(26) + 65);
 
             Log.v("PlainThread" + threadNumber, "counter: " + counter);
             Log.v("PlainThread" + threadNumber, "output: " + output);
