@@ -19,12 +19,16 @@ public class MainActivity extends AppCompatActivity {
     PlainThread plainThread2;
 
     public void startPlainThread1(View v) {
-        plainThread1 = new PlainThread(1);
+        plainThread1 = new PlainThread(1,
+                findViewById(R.id.count1EditText),
+                findViewById(R.id.output1EditText));
         plainThread1.start();
     }
 
     public void startPlainThread2(View v) {
-        plainThread2 = new PlainThread(2);
+        plainThread2 = new PlainThread(2,
+                findViewById(R.id.count2EditText),
+                findViewById(R.id.output2EditText));
         plainThread2.start();
     }
 

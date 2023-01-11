@@ -128,7 +128,7 @@
                 android:text="カウンタ" />
 
             <EditText
-                android:id="@+id/counter2EditText"
+                android:id="@+id/count2EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

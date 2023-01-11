@@ -1,6 +1,7 @@
 package com.example.mythreadexamples;
 
 import android.util.Log;
+import android.widget.EditText;
 
 import java.util.Random;
 
@@ -25,9 +26,13 @@ public class PlainThread extends Thread {
     String output = "";
     Random random = new Random();
     int threadNumber;
+    EditText counterEditText;
+    EditText outputEditText;
 
-    PlainThread(int threadNumber) {
+    PlainThread(int threadNumber, EditText counterEditText, EditText outputEditText) {
         this.threadNumber = threadNumber;
+        this.counterEditText = counterEditText;
+        this.outputEditText = outputEditText;
     }
 
     public Boolean enabled = true;
@@ -42,6 +47,9 @@ public class PlainThread extends Thread {
 
             Log.v("PlainThread" + threadNumber, "counter: " + counter);
             Log.v("PlainThread" + threadNumber, "output: " + output);
+
+            counterEditText.setText("" + counter);
+            outputEditText.setText(output);
 
             try {
                 sleep(2000);
