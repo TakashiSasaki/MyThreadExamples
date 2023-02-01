@@ -26,20 +26,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="plainThread1" />
+                android:text="thread1" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="startPlainThread1"
+                android:onClick="startThread1"
                 android:text="start" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="interruptPlainThread1"
+                android:onClick="interruptThread1"
                 android:text="interrupt" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="submitThread1"
+                android:text="submit" />
         </LinearLayout>
 
 
@@ -100,18 +105,18 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="plainThread2" />
+                android:text="thread2" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="startPlainThread2"
+                android:onClick="startThread2"
                 android:text="start" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="interruptPlainThread2"
+                android:onClick="interruptThread2"
                 android:text="interrupt" />
 
         </LinearLayout>

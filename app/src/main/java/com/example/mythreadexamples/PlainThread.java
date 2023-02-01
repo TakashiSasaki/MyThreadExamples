@@ -1,6 +1,8 @@
 package com.example.mythreadexamples;
 
+import android.os.Handler;
 import android.util.Log;
+import android.widget.EditText;
 
 import java.util.Random;
 
@@ -25,21 +27,42 @@ public class PlainThread extends Thread {
     String output = "";
     Random random = new Random();
     int threadNumber;
+    EditText counterEditText;
+    EditText outputEditText;
+    Handler handler;
 
-    PlainThread(int threadNumber) {
+    PlainThread(int threadNumber, EditText counterEditText, EditText outputEditText,
+                Handler handler) {
         this.threadNumber = threadNumber;
+        this.counterEditText = counterEditText;
+        this.outputEditText = outputEditText;
+        this.handler = handler;
     }
+
+    public Boolean enabled = true;
 
     @Override
     public void run() {
         //super.run();
 
-        while (counter < 10) {
+        while (counter < 10 && enabled == true) {
             counter += 1;
             output += (char) (random.nextInt(26) + 65);
 
             Log.v("PlainThread" + threadNumber, "counter: " + counter);
             Log.v("PlainThread" + threadNumber, "output: " + output);
-        }
+
+
+            handler.post(() -> {
+                counterEditText.setText("" + counter);
+                outputEditText.setText(output);
+            });
+
+            try {
+                sleep(2000);
+            } catch (InterruptedException e) {
+                Log.v("PlainThread" + this.threadNumber, "finished sleeping");
+            }//try
+        }//while
     }
 }
